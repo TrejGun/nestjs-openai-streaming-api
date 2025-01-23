@@ -1,7 +1,8 @@
-import { Controller, Post, Body, Get, Res, Redirect } from '@nestjs/common';
+import { Body, Controller, Get, Post, Redirect, Res } from '@nestjs/common';
 import { openai } from '@ai-sdk/openai';
-import { streamText } from 'ai';
+import { streamText, tool } from 'ai';
 import type { Response } from 'express';
+import { z } from 'zod';
 
 import { ChatDto } from './app.dto';
 
@@ -21,6 +22,13 @@ export class AppController {
     const stream = streamText({
       model: openai('gpt-4o-mini'),
       messages,
+      tools: {
+        answerToLife: tool({
+          description: 'Gives you the answer to life',
+          parameters: z.object({}),
+          execute: async () => Promise.resolve({ answer: 69 }),
+        }),
+      },
     });
     stream.pipeDataStreamToResponse(res);
   }
