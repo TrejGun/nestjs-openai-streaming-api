@@ -30,6 +30,8 @@ jobs:
           node-version: 22
           cache: 'npm'
 
+      - run: npm update
+
       - run: npm i --legacy-peer-deps
       - uses: nrwl/nx-set-shas@v4
 
