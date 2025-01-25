@@ -16,7 +16,7 @@ async function bootstrap() {
   const port = process.env.PORT || 3000;
 
   app.enableCors({
-    origin: 'http://localhost:4200', // Разрешите домен вашего фронтенда
+    origin: 'http://localhost:4200',
   });
 
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
