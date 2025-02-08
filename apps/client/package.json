@@ -1,14 +1,14 @@
 {
   "dependencies": {
-    "ai": "4.1.5",
+    "ai": "4.1.25",
     "postcss": "8.5.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-router-dom": "7.1.3",
-    "tailwindcss": "4.0.0"
+    "react-router-dom": "7.1.5",
+    "tailwindcss": "4.0.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.0.0"
+    "@tailwindcss/postcss": "4.0.4"
   },
   "name": "@nx-demo/client",
   "nx": {
