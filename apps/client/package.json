@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "ai": "4.3.16",
+    "@ai-sdk/react": "1.2.12",
     "postcss": "8.5.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",

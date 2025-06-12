@@ -1,10 +1,10 @@
-import { useChat } from 'ai/react';
+import { useChat } from '@ai-sdk/react';
 
 export default function App() {
   const {
     error,
     input,
-    isLoading,
+    status,
     handleInputChange,
     handleSubmit,
     messages,
@@ -23,7 +23,7 @@ export default function App() {
         </div>
       ))}
 
-      {isLoading && (
+      {status === 'submitted' && (
         <div className="mt-4 text-gray-500">
           <div>Loading...</div>
           <button
@@ -55,7 +55,7 @@ export default function App() {
           value={input}
           placeholder="Say something..."
           onChange={handleInputChange}
-          disabled={isLoading || error != null}
+          disabled={status === 'submitted' || status === 'streaming'}
         />
       </form>
     </div>
